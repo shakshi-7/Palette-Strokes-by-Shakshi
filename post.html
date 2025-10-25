@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Stories - Palette Strokes by Shakshi</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">Palette Strokes by Shakshi</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="blog-header">
+    <h1>Design Stories</h1>
+    <p class="section-subtitle">Discover the latest trends, tips, and inspiration for creating beautiful interior spaces</p>
+    
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="blog-search-input" placeholder="Search articles...">
+    </div>
+  </section>
+
+  <section class="blog-grid" id="blog-grid-container">
+    <!-- Loading Skeleton Placeholder -->
+    <div class="loading-container" id="blog-loading">
+        <div class="skeleton-card">
+            <div class="skeleton-image"></div>
+            <div class="skeleton-content">
+                <div class="skeleton-meta"></div>
+                <div class="skeleton-title"></div>
+                <div class="skeleton-text"></div>
+                <div class="skeleton-link"></div>
+            </div>
+        </div>
+        <div class="skeleton-card">
+            <div class="skeleton-image"></div>
+            <div class="skeleton-content">
+                <div class="skeleton-meta"></div>
+                <div class="skeleton-title"></div>
+                <div class="skeleton-text"></div>
+                <div class="skeleton-link"></div>
+            </div>
+        </div>
+        <div class="skeleton-card">
+            <div class="skeleton-image"></div>
+            <div class="skeleton-content">
+                <div class="skeleton-meta"></div>
+                <div class="skeleton-title"></div>
+                <div class="skeleton-text"></div>
+                <div class="skeleton-link"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog posts from Firebase will be injected here -->
+    
+  </section>
+  <div id="no-results-message" class="no-results-message" style="display: none;">
+      <p>No blog posts found. Try a different search term.</p>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Palette Strokes by Shakshi</h3>
+        <p>Creating beautiful spaces, one design at a time.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Navigate</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect</h3>
+        <ul>
+          <li><a href="mailto:palettestrokesbyshakshi@gmail.com">Email</a></li>
+          <li><a href="https://in.pinterest.com/PaletteStrokesByShakshi/">Pinterest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Palette Strokes by Shakshi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  
+  <script src="js/main.js"></script>
+  <!-- Load blog script as a module -->
+  <script type="module" src="js/blog.js"></script>
+</body>
+</html>

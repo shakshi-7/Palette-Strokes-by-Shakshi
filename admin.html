@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Palette Strokes by Shakshi</title>
+  <link rel="stylesheet" href="css/styles.css">
+  
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="logo">Palette Strokes by Shakshi</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="admin.html" style="color: #000; font-weight: 500;">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="admin-header">
+    <h1>Admin Dashboard</h1>
+    <p class="section-subtitle">Manage your blog posts and product listings</p>
+  </section>
+
+  <div class="admin-container">
+    <!-- Statistics -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number" id="stats-blog-posts">0</div>
+        <div class="stat-label">Total Blog Posts</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="stats-products">0</div>
+        <div class="stat-label">Total Products</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="stats-user">-</div>
+        <div class="stat-label">Auth Status</div>
+      </div>
+    </div>
+
+    <!-- Authentication Notice -->
+    <div class="auth-notice" id="auth-notice">
+      <div class="auth-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+      </div>
+      <h3>Authentication Required</h3>
+      <p>Please log in to manage your website content.</p>
+      <button class="btn" id="login-btn-main" style="margin-top: 15px;">Login</button>
+    </div>
+
+    <!-- Blog Management Section -->
+    <section class="admin-section">
+      <h2 class="admin-section-title">📝 Blog Post Management</h2>
+      
+      <div class="admin-form">
+        <h3>Add New Blog Post</h3>
+        
+        <form id="blog-form">
+          <div class="form-section">
+            <h4 class="form-section-title">Basic Information</h4>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Post Title *</label>
+                <input type="text" name="blogTitle" placeholder="Enter blog post title" required>
+              </div>
+              <div class="form-group">
+                <label>Author Name *</label>
+                <input type="text" name="blogAuthor" placeholder="Shakshi" value="Shakshi" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h4 class="form-section-title">Content & Media</h4>
+            <div class="form-group">
+              <label>Featured Image URL *</label>
+              <input type="url" name="blogImage" placeholder="https://example.com/image.jpg" required>
+            </div>
+            
+            <div class="form-group">
+              <label>Post Content (HTML allowed) *</label>
+              <textarea name="blogContent" placeholder="Write your blog post here. You can use HTML tags like <h2>, <p>, <ul>, <li>, <strong>..." rows="10" required></textarea>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Publication Date</label>
+              <input type="date" name="blogDate" required>
+            </div>
+            <div class="form-group">
+              <label>Category</label>
+              <select name="blogCategory">
+                <option>Interior Design</option>
+                <option>Color Theory</option>
+                <option>Sustainable Living</option>
+                <option>Small Spaces</option>
+                <option>Biophilic Design</option>
+              </select>
+            </div>
+          </div>
+          
+          <input type="hidden" name="blogPostId">
+          <button type="submit" class="submit-btn">Publish Blog Post</button>
+          <button type="button" class="btn" id="blog-form-cancel" style="display: none; background: #777; margin-left: 10px;">Cancel Edit</button>
+        </form>
+      </div>
+
+      <div class="items-list">
+        <h3>Existing Blog Posts</h3>
+        <div id="blog-items-list">
+          <!-- Loading message -->
+          <p id="blog-list-loading">Loading blog posts from database...</p>
+          <!-- Blog posts from Firebase will be injected here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Management Section -->
+    <section class="admin-section">
+      <h2 class="admin-section-title">🛍️ Product Management</h2>
+      
+      <div class="admin-form">
+        <h3>Add New Product</h3>
+        
+        <form id="product-form">
+          <div class="form-section">
+            <h4 class="form-section-title">Product Details</h4>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Product Name *</label>
+                <input type="text" name="productName" placeholder="Enter product name" required>
+              </div>
+              <div class="form-group">
+                <label>Brand / Creator *</label>
+                <input type="text" name="productBrand" placeholder="Brand name" required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>Product Description *</label>
+              <textarea name="productDescription" placeholder="Describe the product..." rows="4" required></textarea>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h4 class="form-section-title">Images & Links</h4>
+            <div class="form-group">
+              <label>Product Image URL *</label>
+              <input type="url" name="productImage" placeholder="https://example.com/product.jpg" required>
+            </div>
+            
+            <div class="form-group">
+              <label>Product Purchase Link * (Affiliate Link)</label>
+              <input type="url" name="productLink" placeholder="https://store.com/product" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Category *</label>
+              <select name="productCategory" required>
+                <option value="">Select category</option>
+                <option>Furniture</option>
+                <option>Decor</option>
+                <option>Lighting</option>
+                <option>Textiles</option>
+                <option>Wall Decor</option>
+                <option>Storage</option>
+                <option>Rugs</option>
+                <option>Window Treatment</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Price Range (Optional)</label>
+              <input type="text" name="productPrice" placeholder="$50 - $100">
+            </div>
+          </div>
+          
+          <input type="hidden" name="productId">
+          <button type="submit" class="submit-btn">Add Product</button>
+          <button type="button" class="btn" id="product-form-cancel" style="display: none; background: #777; margin-left: 10px;">Cancel Edit</button>
+        </form>
+      </div>
+
+      <div class="items-list">
+        <h3>Existing Products</h3>
+        <div id="product-items-list">
+          <!-- Loading message -->
+          <p id="product-list-loading">Loading products from database...</p>
+          <!-- Products from Firebase will be injected here -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Palette Strokes by Shakshi</h3>
+        <p>Creating beautiful spaces, one design at a time.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Navigate</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect</h3>
+        <ul>
+          <li><a href="mailto:palettestrokesbyshakshi@gmail.com">Email</a></li>
+          <li><a href="httpsa://in.pinterest.com/PaletteStrokesByShakshi/">Pinterest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Palette Strokes by Shakshi. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+
+  <!-- Load main helper script -->
+  <script src="js/main.js"></script>
+  
+  <!-- Load admin script as a module -->
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>
