@@ -1385,3 +1385,89 @@ footer {
   font-size: 16px;
   grid-column: 1 / -1; /* Span full grid width */
 }
+
+/* =========================================
+   Legal & Content Page Styles
+   ========================================= */
+
+.content-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px 40px 40px 40px; /* More padding on bottom */
+  background-color: #fff;
+  border-radius: 8px;
+  line-height: 1.7;
+  border: 1px solid #eee;
+}
+.content-page h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #000;
+}
+.content-page h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: #000;
+}
+.content-page p, .content-page ul {
+  margin-bottom: 20px;
+  color: #444;
+  font-size: 1.05rem;
+}
+.content-page ul {
+  list-style-position: outside;
+  margin-left: 20px;
+}
+.content-page em {
+  color: #777;
+  font-style: italic;
+}
+.content-page a {
+  color: #000;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+/* =========================================
+   Affiliate Disclaimer Box
+   ========================================= */
+
+.affiliate-disclaimer-box {
+  max-width: 90%;
+  margin: 20px auto 40px auto;
+  padding: 20px;
+  background-color: #fdfdfd;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+.affiliate-disclaimer-box strong {
+  color: #333;
+}
+.disclaimer-link {
+  font-weight: 600;
+  color: #000;
+  text-decoration: underline;
+  white-space: nowrap; /* Prevents link from breaking awkwardly */
+}
+
+/* =========================================
+   Footer Link Styles
+   ========================================= */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-section ul li {
+  margin-bottom: 12px;
+}
+.footer-section ul li:last-child {
+  margin-bottom: 0;
+}
