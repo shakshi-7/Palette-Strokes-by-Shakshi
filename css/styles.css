@@ -1471,3 +1471,16 @@ footer {
 .footer-section ul li:last-child {
   margin-bottom: 0;
 }
+
+/* =========================================
+   Logo Styling
+   ========================================= */
+.logo {
+  font-size: 0; /* Removes any text-related styling */
+}
+
+.logo img {
+  height: 40px; /* You can change this number to make your logo bigger or smaller */
+  width: auto;
+  display: block;
+}
